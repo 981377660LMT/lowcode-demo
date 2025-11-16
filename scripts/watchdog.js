@@ -7,7 +7,7 @@ const workingDir = process.cwd();
 const pkg = JSON.parse(fs.readFileSync(join(workingDir, 'package.json'), 'utf-8'));
 if (pkg.private) return;
 const { files } = pkg;
-files.forEach(file => {
+files.forEach((file) => {
   const fileDir = join(workingDir, file);
   if (!fs.existsSync(fileDir)) {
     throw new Error(`${fileDir} does not exist, plz run build`);
